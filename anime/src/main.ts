@@ -4,8 +4,22 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import Vuetify from 'vuetify';
+
 Vue.config.productionTip = false
 
+// icons
+Vue.component('font-awesome-icon', FontAwesomeIcon) // Register component globally
+library.add(fas) // Include needed icons
+
+Vue.use(Vuetify, {
+  iconfont: 'fa',
+})
+
+// Langs
 import VueI18n from 'vue-i18n';
 import i18n from './langs/i18n';
 Vue.use(VueI18n);
