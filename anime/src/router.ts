@@ -3,6 +3,10 @@ import VueRouter from 'vue-router';
 import store from './store';
 import Home from './views/Home.vue';
 
+// Layouts
+import HomePageLayout from './layouts/HomePageLayout.vue';
+import AnimePageLayout from './layouts/AnimePageLayout.vue';
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -11,8 +15,19 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'routes.home',
+      component: HomePageLayout,
+      children: [
+        {
+          path: 'anime',
+          redirect: 'anime/list',
+          name: 'routes.anime',
+          component: AnimePageLayout,
+          children: [
+
+          ],
+        },
+      ],
     },
     {
       path: '/about',
