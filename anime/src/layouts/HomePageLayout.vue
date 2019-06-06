@@ -33,11 +33,9 @@
           :placeholder="$t('layouts.home.search')">
         </v-text-field>
       </div>
-        <!-- <v-spacer></v-spacer> -->
-      
     </v-toolbar>
 
-    <v-content>
+    <v-content class="main">
       <router-view></router-view>
     </v-content>
 

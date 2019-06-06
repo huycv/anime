@@ -7,6 +7,9 @@ import Home from './views/Home.vue';
 import HomePageLayout from './layouts/HomePageLayout.vue';
 import AnimePageLayout from './layouts/AnimePageLayout.vue';
 
+// Views
+const AnimeHomePage = () => import('@/views/anime/AnimeHomePage.vue');
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -24,6 +27,10 @@ const router = new VueRouter({
           name: 'routes.anime',
           component: AnimePageLayout,
           children: [
+            {
+              path: 'list',
+              component: AnimeHomePage
+            }
 
           ],
         },
