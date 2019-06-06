@@ -6,8 +6,15 @@ import store from './store'
 
 Vue.config.productionTip = false
 
-new Vue({
+import VueI18n from 'vue-i18n';
+import i18n from './langs/i18n';
+Vue.use(VueI18n);
+
+
+const mainApp = new Vue({
   router,
   store,
-  render: h => h(App)
-}).$mount('#app')
+  i18n,
+  render: (h) => h(App),
+}).$mount('#app');
+export default mainApp;
